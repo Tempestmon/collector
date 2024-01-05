@@ -1,5 +1,7 @@
-struct Statistics {
+use uuid::Uuid;
 
+struct Statistics {
+    id: Uuid,
 }
 
 impl Statistics {

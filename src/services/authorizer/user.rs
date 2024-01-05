@@ -1,5 +1,6 @@
 use std::error::Error;
 use std::fmt::{Display, Formatter};
+use uuid::Uuid;
 use crate::services::authorizer::auth;
 use crate::services::authorizer::auth::{AddressInfo, EducationInfo, WorkInfo};
 use crate::services::authorizer::reward::Balance;
@@ -25,6 +26,7 @@ impl Mail {
 
 #[derive(Debug)]
 pub struct User {
+    id: Uuid,
     name: String,
     middle_name: Option<String>,
     second_name: Option<String>,
@@ -39,6 +41,7 @@ pub struct User {
 impl User {
     fn new(name: String) -> Self {
         User {
+            id: Default::default(),
             name: "".to_string(),
             middle_name: None,
             second_name: None,

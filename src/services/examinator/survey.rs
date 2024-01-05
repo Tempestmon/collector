@@ -1,11 +1,13 @@
 use std::collections::HashMap;
 use chrono::{DateTime, Utc};
+use uuid::Uuid;
 
 struct Choice {
 
 }
 
 struct Question {
+    id: Uuid,
     question: String,
     choice: Choice,
 }
@@ -15,6 +17,7 @@ enum Parameter {
 }
 
 pub struct Survey {
+    id: Uuid,
     questions: Vec<Question>,
     parameters: HashMap<Parameter, bool>,
     creation_date: DateTime<Utc>,

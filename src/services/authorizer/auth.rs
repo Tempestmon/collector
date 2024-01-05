@@ -1,4 +1,4 @@
-use crate::common::user::{User};
+use crate::services::authorizer::user::User;
 
 #[derive(Debug)]
 pub struct AuthInfo {

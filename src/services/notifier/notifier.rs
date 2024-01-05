@@ -1,7 +1,9 @@
+use uuid::Uuid;
 use crate::services::examinator::survey::Survey;
-use crate::common::user::User;
+use crate::services::authorizer::user::User;
 
 struct Subscription {
+    id: Uuid,
     user: User,
     surveys: Vec<Survey>,
 }
